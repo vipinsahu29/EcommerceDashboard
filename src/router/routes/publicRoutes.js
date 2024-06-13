@@ -1,4 +1,6 @@
 import { lazy } from "react";
+const  AdminDashboard = lazy(() => import("../../views/admin/AdminDashboard"));
+const  MainLayout = lazy(() => import("../../layout/MainLayout"));
 const AdminLogin = lazy(() => import("../../views/auth/AdminLogin"))
 const Login = lazy(() => import("../../views/auth/Login"));
 const Register = lazy(() => import("../../views/auth/Register"));
@@ -15,7 +17,18 @@ const publicRoutes = [
     path: "/admin/login",
     element: <AdminLogin/>,
   },
-  
+  // {
+  //       path : '/unauthorized',
+  //       element : <UnAuthorized/>
+  //   },
+  // {
+  //   path:'/',
+  //   element: <MainLayout/>
+  // },
+  // {
+  //   path:'admin/dashboard',
+  //   element: <AdminDashboard/>
+  // }
 
 ];
 

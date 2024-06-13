@@ -8,7 +8,7 @@ function App() {
   const [allRoutes, setAllRoutes] = useState([...publicRoutes])
 
   useEffect(()=>{
-    const routes = getRoutes
+    const routes = getRoutes()
     setAllRoutes([...allRoutes,routes])
   },[])
   return (
