@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Pagination from "../Pagination";
 import { FaEye } from "react-icons/fa";
 
-const Sellers = () => {
+const SellerRequest = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [searchValue, setSearchValue] = useState("");
   const [parPage, setParPage] = useState(5);
@@ -11,7 +11,8 @@ const Sellers = () => {
 
   return (
     <div className="px-2 lg:px-7 pt-5">
-      <h1 className="text-[20px] font-bold mb-3">Seller </h1>
+      <h1 className="text-[20px] font-bold mb-3"> Seller Request </h1>
+
       <div className="w-full p-4 bg-[#6a5fdf] rounded-md">
         <div className="flex justify-between items-center">
           <select
@@ -37,25 +38,16 @@ const Sellers = () => {
                   No
                 </th>
                 <th scope="col" className="py-3 px-4">
-                  Image
-                </th>
-                <th scope="col" className="py-3 px-4">
                   Name
-                </th>
-                <th scope="col" className="py-3 px-4">
-                  Shop Name
-                </th>
-                <th scope="col" className="py-3 px-4">
-                  Payment Status
                 </th>
                 <th scope="col" className="py-3 px-4">
                   Email
                 </th>
                 <th scope="col" className="py-3 px-4">
-                  Devision
+                  Payment Status
                 </th>
                 <th scope="col" className="py-3 px-4">
-                  District
+                  Status
                 </th>
                 <th scope="col" className="py-3 px-4">
                   Action
@@ -65,70 +57,49 @@ const Sellers = () => {
 
             <tbody>
               {[1, 2, 3, 4, 5].map((d, i) => (
-                <tr key={i}>
+                <tr className="border-b border-slate-700" key={i}>
                   <td
                     scope="row"
-                    className="py-1 px-4 font-medium whitespace-nowrap"
+                    className="py-2 px-4 font-medium whitespace-nowrap"
                   >
                     {d}
                   </td>
                   <td
                     scope="row"
-                    className="py-1 px-4 font-medium whitespace-nowrap"
-                  >
-                    <img
-                      className="w-[45px] h-[45px]"
-                      src={`http://localhost:3000/images/category/${d}.jpg`}
-                      alt=""
-                    />
-                  </td>
-                  <td
-                    scope="row"
-                    className="py-1 px-4 font-medium whitespace-nowrap"
+                    className="py-2 px-4 font-medium whitespace-nowrap"
                   >
                     Kazi Ariyan{" "}
                   </td>
                   <td
                     scope="row"
-                    className="py-1 px-4 font-medium whitespace-nowrap"
+                    className="py-2 px-4 font-medium whitespace-nowrap"
                   >
-                    Easy Shop
+                    ariyan@gmail.com
                   </td>
                   <td
                     scope="row"
-                    className="py-1 px-4 font-medium whitespace-nowrap"
+                    className="py-2 px-4 font-medium whitespace-nowrap"
+                  >
+                    <span>Inactive</span>{" "}
+                  </td>
+
+                  <td
+                    scope="row"
+                    className="py-2 px-4 font-medium whitespace-nowrap"
                   >
                     <span>Pending</span>{" "}
                   </td>
-                  <td
-                    scope="row"
-                    className="py-1 px-4 font-medium whitespace-nowrap"
-                  >
-                    ariyan@gmail.com{" "}
-                  </td>
 
                   <td
                     scope="row"
-                    className="py-1 px-4 font-medium whitespace-nowrap"
-                  >
-                    Dhaka{" "}
-                  </td>
-
-                  <td
-                    scope="row"
-                    className="py-1 px-4 font-medium whitespace-nowrap"
-                  >
-                    Paltan{" "}
-                  </td>
-
-                  <td
-                    scope="row"
-                    className="py-1 px-4 font-medium whitespace-nowrap"
+                    className="py-2 px-4 font-medium whitespace-nowrap"
                   >
                     <div className="flex justify-start items-center gap-4">
-                      <Link className="p-[6px] bg-green-500 rounded hover:shadow-lg hover:shadow-green-500/50">
-                        {" "}
-                        <FaEye />{" "}
+                      <Link
+                        to="/admin/dashboard/seller/details/2"
+                        className="p-[6px] bg-green-500 rounded hover:shadow-lg hover:shadow-green-500/50"
+                      >
+                        <FaEye />
                       </Link>
                     </div>
                   </td>
@@ -152,4 +123,4 @@ const Sellers = () => {
   );
 };
 
-export default Sellers;
+export default SellerRequest;
