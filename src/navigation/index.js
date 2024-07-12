@@ -1,13 +1,12 @@
 import { allNav } from "./allNav";
 
 export const getNav = (role) => {
-  const finalNav = [];
+  const finalNavs = [];
 
-  finalNav.forEach((item) => {
-    if (role === item.role) {
-      console.log('----,',item)
-      finalNav.push(item);
+  for (let i = 0; i < allNav.length; i++) {
+    if (role === allNav[i].role) {
+      finalNavs.push(allNav[i]);
     }
-  });
-  return allNav;
+  }
+  return finalNavs;
 };
