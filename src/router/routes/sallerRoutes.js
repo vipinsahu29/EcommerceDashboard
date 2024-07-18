@@ -8,7 +8,6 @@ const SellerToCustomer = lazy(() =>
 );
 const SellerToAdmin = lazy(() => import("../../views/seller/SellerToAdmin"));
 const Payments = lazy(() => import("../../views/seller/Payments"));
-const Home = lazy(() => import("../../views/Home"));
 const SellerDashboard = lazy(() =>
   import("../../views/seller/SellerDashboard")
 );
@@ -18,11 +17,7 @@ const DiscountProducts = lazy(() =>
 );
 const Orders = lazy(() => import("../../views/seller/Orders"));
 export const sellerRoutes = [
-  {
-    path: "/",
-    element: <Home />,
-    ability: ["admin", "seller"],
-  },
+ 
   {
     path: "/seller/dashboard",
     element: <SellerDashboard />,
