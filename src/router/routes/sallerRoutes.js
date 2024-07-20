@@ -1,23 +1,25 @@
 import { lazy } from "react";
-const OrderDetails = lazy(() => import("../../views/seller/OrderDetails"));
-const EditProduct = lazy(() => import("../../views/seller/EditProduct"));
-const AddProduct = lazy(() => import("../../views/seller/AddProduct"));
-const Profile = lazy(() => import("../../views/seller/Profile"));
-const SellerToCustomer = lazy(() =>
-  import("../../views/seller/SellerToCustomer")
-);
-const SellerToAdmin = lazy(() => import("../../views/seller/SellerToAdmin"));
-const Payments = lazy(() => import("../../views/seller/Payments"));
+
 const SellerDashboard = lazy(() =>
   import("../../views/seller/SellerDashboard")
 );
+const AddProduct = lazy(() => import("../../views/seller/AddProduct"));
 const Products = lazy(() => import("../../views/seller/Products"));
 const DiscountProducts = lazy(() =>
   import("../../views/seller/DiscountProducts")
 );
 const Orders = lazy(() => import("../../views/seller/Orders"));
+const Payments = lazy(() => import("../../views/seller/Payments"));
+const SellerToAdmin = lazy(() => import("../../views/seller/SellerToAdmin"));
+const SellerToCustomer = lazy(() =>
+  import("../../views/seller/SellerToCustomer")
+);
+const Profile = lazy(() => import("../../views/seller/Profile"));
+const EditProduct = lazy(() => import("../../views/seller/EditProduct"));
+const OrderDetails = lazy(() => import("../../views/seller/OrderDetails"));
 const Pending = lazy(() => import("./../../views/Pending"));
 const Deactive = lazy(() => import("./../../views/Deactive"));
+
 export const sellerRoutes = [
   {
     path: "/seller/account-pending",
@@ -29,7 +31,6 @@ export const sellerRoutes = [
     element: <Deactive />,
     ability: "seller",
   },
-
   {
     path: "/seller/dashboard",
     element: <SellerDashboard />,
@@ -82,7 +83,7 @@ export const sellerRoutes = [
     path: "/seller/dashboard/chat-support",
     element: <SellerToAdmin />,
     role: "seller",
-    status: ["active", "deactive", "pending"],
+    visibility: ["active", "deactive", "pending"],
   },
   {
     path: "/seller/dashboard/chat-customer/:customerId",

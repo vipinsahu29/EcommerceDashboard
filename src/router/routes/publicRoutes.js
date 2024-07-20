@@ -25,14 +25,6 @@ const publicRoutes = [
         path : '/unauthorized',
         element : <UnAuthorized/>
     },
-  // {
-  //   path:'/',
-  //   element: <MainLayout/>
-  // },
-  // {
-  //   path:'admin/dashboard',
-  //   element: <AdminDashboard/>
-  // }
 ];
 
 export default publicRoutes;
